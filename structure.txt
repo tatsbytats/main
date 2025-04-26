@@ -1,0 +1,64 @@
+your-app-name/
+├── client/
+client/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── common/           # Shared UI components (e.g., Button, Header)
+│   │   ├── user/             # User-specific components
+│   │   └── admin/            # Admin-specific components
+│   ├── pages/
+│   │   ├── user/
+│   │   │   ├── UserDashboard.jsx
+│   │   │   └── UserProfile.jsx
+│   │   └── admin/
+│   │       ├── AdminDashboard.jsx
+│   │       └── UserManagement.jsx
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   └── useFetch.js
+│   ├── routes/
+│   │   ├── userRoutes.jsx
+│   │   └── adminRoutes.jsx
+│   ├── store/
+│   │   └── index.js           # Redux store config (if using Redux)
+│   ├── services/
+│   │   └── api.js             # Axios config and endpoints
+│   ├── App.jsx
+│   ├── index.js
+│   └── routeGuard.js         # Role-based route protection
+
+├── server/
+server/
+├── controllers/
+│   ├── userController.js
+│   └── adminController.js
+├── models/
+│   ├── User.js
+│   └── Admin.js              # Can be same as User with role-based logic
+├── routes/
+│   ├── userRoutes.js
+│   └── adminRoutes.js
+├── middlewares/
+│   ├── authMiddleware.js     # Auth & role verification
+│   ├── errorMiddleware.js
+│   └── adminMiddleware.js
+├── app.js                    # Express app setup
+├── server.js                 # Entry point
+
+├── config/
+config/
+├── db.js                     # MongoDB connection
+├── jwt.js                    # JWT configuration and helpers
+
+├── utils/
+utils/
+├── generateToken.js
+├── hashPassword.js
+
+├── .env
+├── .gitignore
+├── package.json
+├── README.md
