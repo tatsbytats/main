@@ -1,0 +1,207 @@
+1. Layout & Grid Components
+Container
+
+Container.Fluid (fluid-width variant)
+
+Row
+
+Col
+
+Stack (replaces manual spacing for inline/stacked layouts)
+
+2. Navigation Components
+Navbar & Menus
+Navbar
+
+Navbar.Brand (logo/text)
+
+Navbar.Toggle (mobile hamburger button)
+
+Navbar.Collapse (collapsible content)
+
+Navbar.Offcanvas (mobile menu variant)
+
+Nav
+
+Nav.Item
+
+Nav.Link
+
+NavDropdown (dropdown inside Nav)
+
+NavDropdown.Item
+
+NavDropdown.Divider
+
+NavDropdown.Header
+
+Breadcrumb
+
+Breadcrumb.Item
+
+Pagination
+Pagination
+
+Pagination.Item
+
+Pagination.Prev / Pagination.Next
+
+Pagination.First / Pagination.Last
+
+Pagination.Ellipsis (overflow indicator)
+
+3. Button Components
+Button
+
+ButtonGroup (groups buttons)
+
+ToggleButtonGroup (radio/checkbox-style toggles)
+
+ToggleButton (individual toggle)
+
+ButtonToolbar (groups ButtonGroups)
+
+4. Form Components
+Core Form Elements
+Form
+
+Form.Group (wraps labels + controls)
+
+Form.Label
+
+Form.Control (inputs, selects, textareas)
+
+Form.Control.Feedback (validation message)
+
+Form.Text (helper text)
+
+Form.Check (checkbox/radio)
+
+Form.Check.Input (hidden input)
+
+Form.Check.Label
+
+Form.Select (dropdown)
+
+Form.Range (slider)
+
+FloatingLabel (floating label wrapper)
+
+Input Groups
+InputGroup
+
+InputGroup.Text (addon text)
+
+InputGroup.Checkbox / InputGroup.Radio
+
+5. Alert & Feedback Components
+Alert
+
+Alert.Heading
+
+Alert.Link
+
+Toast (notification popup)
+
+ToastContainer (positions toasts)
+
+Toast.Header / Toast.Body
+
+ProgressBar
+
+ProgressBar (supports variant, animated, striped)
+
+Spinner (loading indicator)
+
+Placeholder (skeleton UI)
+
+Placeholder.Button / Placeholder.Image
+
+6. Modal & Overlay Components
+Modals
+Modal
+
+Modal.Header / Modal.Body / Modal.Footer
+
+Modal.Title
+
+Modal.Dialog (custom positioning)
+
+Offcanvas
+Offcanvas (slide-in panel)
+
+Offcanvas.Header / Offcanvas.Body
+
+Tooltips & Popovers
+Overlay (base for tooltips/popovers)
+
+Tooltip (hover info)
+
+Popover (click-triggered info)
+
+Popover.Header / Popover.Body
+
+Dropdowns
+Dropdown
+
+Dropdown.Toggle
+
+Dropdown.Menu
+
+Dropdown.Item
+
+Dropdown.Divider
+
+Dropdown.Header
+
+7. Data Display Components
+Cards
+Card
+
+Card.Header / Card.Body / Card.Footer
+
+Card.Title / Card.Subtitle
+
+Card.Img (responsive image)
+
+Card.Link
+
+Card.Text
+
+Accordion
+Accordion
+
+Accordion.Item
+
+Accordion.Header
+
+Accordion.Body
+
+Lists & Tables
+ListGroup
+
+ListGroup.Item
+
+Table (supports striped, bordered, etc.)
+
+Figure (media + caption)
+
+Figure.Image
+
+Figure.Caption
+
+Carousel
+Carousel
+
+Carousel.Item
+
+Carousel.Caption
+
+Carousel.Crossfade (smooth transitions)
+
+8. Utility Components
+CloseButton (dismissible X button)
+
+Ratio (aspect ratio helper for embeds)
+
+Collapse (toggle content visibility)
