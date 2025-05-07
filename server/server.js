@@ -1,195 +1,118 @@
-// server.js
+// server.js - Express backend with MongoDB integration
 const express = require('express');
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const { body, validationResult } = require('express-validator');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const cors = require('cors'); // Uncommented
+require('dotenv').config();
 
-// Load environment variables
-dotenv.config();
+// Database and Models
+const connectDB = require('./db/config');
+const AnimalRescueRequest = require('./models/AnimalRescueRequest');
+const User = require('./models/User');
+const Event = require('./models/Event');
+const createAdmins = require('./seed');
+// Routes
+const animalRoutes = require('./routes/animals');
+const adoptRoutes = require('./routes/adopt');
+const rescueRequestRoutes = require('./routes/rescueRequests');
+const eventRoutes = require('./routes/events');
+const userRoutes = require('./routes/users');
 
-// Initialize Express app
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+// Enhanced CORS Configuration
+app.use(cors({
+  origin: '*', // Allow all origins for testing
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pet-adoption', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected successfully'))
-.catch(err => console.error('MongoDB connection error:', err));
+// Add CORS headers directly for additional safety
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
-// Define User Schema
-const userSchema = new mongoose.Schema({
-  // Basic User Info
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  phone: { type: String, required: true },
-  address: { type: String, required: true },
-  password: { type: String, required: true },
-  
-  // Adoption-Relevant Info
-  dateOfBirth: { type: Date, required: true },
-  residenceType: { type: String, required: true },
-  housingStatus: { type: String, required: true },
-  householdMembers: {
-    adults: { type: Number, required: true },
-    children: { type: Number, required: true },
-    otherPets: { type: String }
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  next();
+});
+
+// Log all requests for debugging
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
+// Body Parsing Middleware
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Connect to MongoDB
+connectDB();
+createAdmins();
+
+// Ensure uploads directory exists
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  console.log('Creating uploads directory:', uploadsDir);
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
+// Multer Configuration (unchanged from your version)
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadDir = path.join(__dirname, 'uploads');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
   },
-  petExperience: { type: String, required: true },
-  
-  // Pet Preferences
-  petType: { type: String, required: true },
-  preferredAge: { type: String },
-  preferredSize: { type: String },
-  preferredBreed: { type: String },
-  
-  // Optional Info
-  veterinarianInfo: { type: String },
-  
-  // Terms and Subscriptions
-  subscribeNewsletter: { type: Boolean, default: false },
-  
-  // Timestamps
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
-});
-
-// Create User model
-const User = mongoose.model('User', userSchema);
-
-// Validation middleware for registration
-const validateRegistration = [
-  body('firstName').trim().notEmpty().withMessage('First name is required'),
-  body('lastName').trim().notEmpty().withMessage('Last name is required'),
-  body('email').isEmail().withMessage('Please provide a valid email'),
-  body('phone').notEmpty().withMessage('Phone number is required'),
-  body('address').notEmpty().withMessage('Address is required'),
-  body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
-  body('dateOfBirth').isDate().withMessage('Valid date of birth is required'),
-  body('residenceType').notEmpty().withMessage('Residence type is required'),
-  body('housingStatus').notEmpty().withMessage('Housing status is required'),
-  body('householdMembers.adults').isInt({ min: 1 }).withMessage('At least one adult is required'),
-  body('householdMembers.children').isInt({ min: 0 }).withMessage('Number of children must be valid'),
-  body('petExperience').notEmpty().withMessage('Pet experience information is required'),
-  body('petType').notEmpty().withMessage('Pet type preference is required')
-];
-
-// Registration route
-app.post('/api/register', validateRegistration, async (req, res) => {
-  try {
-    // Check for validation errors
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ success: false, message: 'Validation failed', errors: errors.array() });
-    }
-
-    // Check if email already exists
-    const emailExists = await User.findOne({ email: req.body.email });
-    if (emailExists) {
-      return res.status(400).json({ success: false, message: 'Email already registered' });
-    }
-
-    // Hash password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
-    // Create new user object
-    const newUser = new User({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      phone: req.body.phone,
-      address: req.body.address,
-      password: hashedPassword,
-      
-      dateOfBirth: req.body.dateOfBirth,
-      residenceType: req.body.residenceType,
-      housingStatus: req.body.housingStatus,
-      householdMembers: {
-        adults: req.body.householdMembers.adults,
-        children: req.body.householdMembers.children,
-        otherPets: req.body.householdMembers.otherPets
-      },
-      petExperience: req.body.petExperience,
-      
-      petType: req.body.petType,
-      preferredAge: req.body.preferredAge,
-      preferredSize: req.body.preferredSize,
-      preferredBreed: req.body.preferredBreed,
-      
-      veterinarianInfo: req.body.veterinarianInfo,
-      subscribeNewsletter: req.body.subscribeNewsletter
-    });
-
-    // Save user to database
-    const savedUser = await newUser.save();
-
-    // Remove password from response
-    const userResponse = {
-      _id: savedUser._id,
-      firstName: savedUser.firstName,
-      lastName: savedUser.lastName,
-      email: savedUser.email
-    };
-
-    res.status(201).json({
-      success: true,
-      message: 'Registration successful',
-      user: userResponse
-    });
-  } catch (error) {
-    console.error('Registration error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Server error during registration',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
-    });
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const ext = path.extname(file.originalname);
+    cb(null, 'rescue-' + uniqueSuffix + ext);
   }
 });
 
-// Simple login route (for demonstration)
-app.post('/api/login', async (req, res) => {
-  try {
-    // Find user by email
-    const user = await User.findOne({ email: req.body.email });
-    if (!user) {
-      return res.status(400).json({ success: false, message: 'Invalid email or password' });
+const upload = multer({
+  storage,
+  limits: { fileSize: 5 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only images are allowed'));
     }
-
-    // Validate password
-    const validPassword = await bcrypt.compare(req.body.password, user.password);
-    if (!validPassword) {
-      return res.status(400).json({ success: false, message: 'Invalid email or password' });
-    }
-
-    // Generate JWT (in a real application)
-    // const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
-
-    res.status(200).json({
-      success: true,
-      message: 'Login successful',
-      user: {
-        _id: user._id,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email
-      }
-      // token: token // Would include this in a real application
-    });
-  } catch (error) {
-    console.error('Login error:', error);
-    res.status(500).json({ success: false, message: 'Server error during login' });
   }
 });
+
+// Test route to check if server is running
+app.get('/api/test', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Server is running correctly',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Routes
+app.use('/api/animals', animalRoutes);
+app.use('/api/adopt', adoptRoutes);
+app.use('/api/rescue-requests', rescueRequestRoutes);
+app.use('/api/events', eventRoutes);
+app.use('/api/users', userRoutes);
+
+// upload
+app.use('/uploads', express.static('uploads'));
+app.use(express.static('client/build'));
 
 // Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
