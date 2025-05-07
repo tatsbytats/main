@@ -3,14 +3,11 @@ const mongoose = require('mongoose');
 // Function to connect to MongoDB
 const connectDB = async () => {
   try {
-    // Always use the test database as the main database
-    const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/test';
-    console.log('Connecting to MongoDB at:', connectionString.replace(/mongodb:\/\/([^:]+):[^@]+@/, 'mongodb://$1:****@'));
+    // Use Atlas connection string from environment variable or fallback to local
+    const connectionString = process.env.MONGODB_URI || 'mongodb+srv://tats:iamjustine@cluster0.atq0p03.mongodb.net/<database>?retryWrites=true&w=majority';
+    console.log('Connecting to MongoDB at:', connectionString.replace(/mongodb(\+srv)?:\/\/([^:]+):[^@]+@/, 'mongodb$1://$2:****@'));
 
-    await mongoose.connect(connectionString, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(connectionString);
 
     console.log('MongoDB connected successfully');
 
