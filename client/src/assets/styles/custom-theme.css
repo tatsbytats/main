@@ -1,0 +1,73 @@
+/* styles/custom-theme.css */
+:root {
+    --bs-primary: #F4AAB9;
+  }
+
+  .c-background {
+    background-color: #F4AAB9; /* a lighter shade for the whole page */
+
+  }
+
+  .c-background-cream {
+    background-color: #f8f9fa;
+  }
+
+  .custom-btn {
+    background-color: #F4AAB9;
+    border-color: #F4AAB9;
+    color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .custom-btn:hover {
+    background-color: #e597a7;
+    border-color: #e597a7;
+  }
+
+  .custom-btn:active {
+    transform: scale(0.97);
+  }
+
+  /* Improve button touch feedback on mobile */
+  @media (max-width: 768px) {
+    .custom-btn {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .custom-heading {
+    color: #F4AAB9;
+  }
+
+  .hover-bg-light:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* For the Offcanvas to behave properly on desktop */
+  @media (min-width: 768px) {
+    .offcanvas-md {
+      visibility: visible;
+      transform: none;
+      position: static;
+    }
+  }
+
+  /* Mobile and tablet specific styles */
+  @media (max-width: 991px) {
+    /* Ensure consistent background color for mobile sidebar */
+    .sidebar-mobile {
+      background-color: #F4AAB9 !important; /* Match navbar color */
+    }
+
+    /* Improve mobile tab header appearance */
+    .custom-heading {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    /* Ensure proper spacing in mobile view */
+    .content-area {
+      padding-top: 1rem;
+    }
+  }

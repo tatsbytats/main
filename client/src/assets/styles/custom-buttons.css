@@ -1,0 +1,256 @@
+/* ==== ORIGINAL COLOR BUTTONS ==== */
+
+/* Sunrise Coral */
+.btn-sunrise-coral {
+    background-color: #FF6B6B;
+    border-color: #FF6B6B;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-sunrise-coral:hover { background-color: #e65a5a; border-color: #e65a5a; }
+.btn-sunrise-coral:active, .btn-sunrise-coral.active {
+    background-color: #cc4a4a;
+    border-color: #cc4a4a;
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.5);
+}
+
+/* Petal Pink */
+.btn-petal-pink {
+    background-color: #FADADD;
+    border-color: #FADADD;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-petal-pink:hover { background-color: #f3c8cc; border-color: #f3c8cc; }
+.btn-petal-pink:active, .btn-petal-pink.active {
+    background-color: #e9b5ba;
+    border-color: #e9b5ba;
+    box-shadow: 0 0 0 0.25rem rgba(250, 218, 221, 0.5);
+}
+
+/* Blush Rose */
+.btn-blush-rose {
+    background-color: #F4AAB9;
+    border-color: #F4AAB9;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-blush-rose:hover { background-color: #e496a5; border-color: #e496a5; }
+.btn-blush-rose:active, .btn-blush-rose.active {
+    background-color: #d48392;
+    border-color: #d48392;
+    box-shadow: 0 0 0 0.25rem rgba(244, 170, 185, 0.5);
+}
+
+/* Deep Raspberry */
+.btn-deep-raspberry {
+    background-color: #D16D89;
+    border-color: #D16D89;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-deep-raspberry:hover { background-color: #b85f78; border-color: #b85f78; }
+.btn-deep-raspberry:active, .btn-deep-raspberry.active {
+    background-color: #9f5168;
+    border-color: #9f5168;
+    box-shadow: 0 0 0 0.25rem rgba(209, 109, 137, 0.5);
+}
+
+/* Warm Taupe */
+.btn-warm-taupe {
+    background-color: #A1887F;
+    border-color: #A1887F;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-warm-taupe:hover { background-color: #8e786f; border-color: #8e786f; }
+.btn-warm-taupe:active, .btn-warm-taupe.active {
+    background-color: #7b685f;
+    border-color: #7b685f;
+    box-shadow: 0 0 0 0.25rem rgba(161, 136, 127, 0.5);
+}
+
+/* Cream White */
+.btn-cream-white {
+    background-color: #FFF8F4;
+    border-color: #FFF8F4;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-cream-white:hover { background-color: #f6efea; border-color: #f6efea; }
+.btn-cream-white:active, .btn-cream-white.active {
+    background-color: #e8e0db;
+    border-color: #e8e0db;
+    box-shadow: 0 0 0 0.25rem rgba(255, 248, 244, 0.5);
+}
+
+/* Soft Mint */
+.btn-soft-mint {
+    background-color: #D6F5E3;
+    border-color: #D6F5E3;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-soft-mint:hover { background-color: #c5e7d3; border-color: #c5e7d3; }
+.btn-soft-mint:active, .btn-soft-mint.active {
+    background-color: #b4d9c3;
+    border-color: #b4d9c3;
+    box-shadow: 0 0 0 0.25rem rgba(214, 245, 227, 0.5);
+}
+
+/* Muted Charcoal */
+.btn-muted-charcoal {
+    background-color: #4E4E4E;
+    border-color: #4E4E4E;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-muted-charcoal:hover { background-color: #3e3e3e; border-color: #3e3e3e; }
+.btn-muted-charcoal:active, .btn-muted-charcoal.active {
+    background-color: #2e2e2e;
+    border-color: #2e2e2e;
+    box-shadow: 0 0 0 0.25rem rgba(78, 78, 78, 0.5);
+}
+
+/* Gold Sand */
+.btn-gold-sand {
+    background-color: #F5CBA7;
+    border-color: #F5CBA7;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-gold-sand:hover { background-color: #e2b58e; border-color: #e2b58e; }
+.btn-gold-sand:active, .btn-gold-sand.active {
+    background-color: #d0a075;
+    border-color: #d0a075;
+    box-shadow: 0 0 0 0.25rem rgba(245, 203, 167, 0.5);
+}
+
+
+/* ==== VARIANT COLOR BUTTONS ==== */
+
+/* Coral Flame */
+.btn-coral-flame {
+    background-color: #FF5E5B;
+    border-color: #FF5E5B;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-coral-flame:hover { background-color: #e65553; border-color: #e65553; }
+.btn-coral-flame:active, .btn-coral-flame.active {
+    background-color: #cc4b4a;
+    border-color: #cc4b4a;
+    box-shadow: 0 0 0 0.25rem rgba(255, 94, 91, 0.5);
+}
+
+/* Rose Quartz */
+.btn-rose-quartz {
+    background-color: #F7C6D0;
+    border-color: #F7C6D0;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-rose-quartz:hover { background-color: #ecb3be; border-color: #ecb3be; }
+.btn-rose-quartz:active, .btn-rose-quartz.active {
+    background-color: #e0a0ac;
+    border-color: #e0a0ac;
+    box-shadow: 0 0 0 0.25rem rgba(247, 198, 208, 0.5);
+}
+
+/* Crimson Plum */
+.btn-crimson-plum {
+    background-color: #B94A68;
+    border-color: #B94A68;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-crimson-plum:hover { background-color: #a1405a; border-color: #a1405a; }
+.btn-crimson-plum:active, .btn-crimson-plum.active {
+    background-color: #88364c;
+    border-color: #88364c;
+    box-shadow: 0 0 0 0.25rem rgba(185, 74, 104, 0.5);
+}
+
+/* Ash Taupe */
+.btn-ash-taupe {
+    background-color: #8A7C74;
+    border-color: #8A7C74;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-ash-taupe:hover { background-color: #796c64; border-color: #796c64; }
+.btn-ash-taupe:active, .btn-ash-taupe.active {
+    background-color: #685c54;
+    border-color: #685c54;
+    box-shadow: 0 0 0 0.25rem rgba(138, 124, 116, 0.5);
+}
+
+/* Vanilla Mist */
+.btn-vanilla-mist {
+    background-color: #FFF3ED;
+    border-color: #FFF3ED;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-vanilla-mist:hover { background-color: #f5e8e1; border-color: #f5e8e1; }
+.btn-vanilla-mist:active, .btn-vanilla-mist.active {
+    background-color: #e6dcd5;
+    border-color: #e6dcd5;
+    box-shadow: 0 0 0 0.25rem rgba(255, 243, 237, 0.5);
+}
+
+/* Sage Mist */
+.btn-sage-mist {
+    background-color: #DFF2E1;
+    border-color: #DFF2E1;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-sage-mist:hover { background-color: #cde2cf; border-color: #cde2cf; }
+.btn-sage-mist:active, .btn-sage-mist.active {
+    background-color: #bcd2bd;
+    border-color: #bcd2bd;
+    box-shadow: 0 0 0 0.25rem rgba(223, 242, 225, 0.5);
+}
+
+/* Graphite Grey */
+.btn-graphite-grey {
+    background-color: #3D3D3D;
+    border-color: #3D3D3D;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-graphite-grey:hover { background-color: #2f2f2f; border-color: #2f2f2f; }
+.btn-graphite-grey:active, .btn-graphite-grey.active {
+    background-color: #212121;
+    border-color: #212121;
+    box-shadow: 0 0 0 0.25rem rgba(61, 61, 61, 0.5);
+}
+
+/* Tangerine Bloom */
+.btn-tangerine-bloom {
+    background-color: #FF7875;
+    border-color: #FF7875;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-tangerine-bloom:hover { background-color: #e66967; border-color: #e66967; }
+.btn-tangerine-bloom:active, .btn-tangerine-bloom.active {
+    background-color: #cc5a58;
+    border-color: #cc5a58;
+    box-shadow: 0 0 0 0.25rem rgba(255, 120, 117, 0.5);
+}
+
+/* Amber Sand */
+.btn-amber-sand {
+    background-color: #F2B885;
+    border-color: #F2B885;
+    color: #4E4E4E;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-amber-sand:hover { background-color: #e0a971; border-color: #e0a971; }
+.btn-amber-sand:active, .btn-amber-sand.active {
+    background-color: #ce9a5d;
+    border-color: #ce9a5d;
+    box-shadow: 0 0 0 0.25rem rgba(242, 184, 133, 0.5);
+}

@@ -1,0 +1,77 @@
+/* Disable all hover effects */
+* {
+  transition: none !important;
+  transform: none !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+/* Disable hover effects on buttons */
+.btn:hover,
+.btn:active,
+.btn:focus {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  background-color: inherit !important;
+  border-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Disable hover effects on table rows */
+tr:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Disable hover effects on links */
+a:hover,
+a:active,
+a:focus {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Disable hover effects on form controls */
+.form-control:hover,
+.form-control:focus,
+.form-control:active {
+  border-color: inherit !important;
+  box-shadow: none !important;
+}
+
+/* Disable hover effects on dropdown items */
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item:focus {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Disable hover effects on badges */
+.badge:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Disable hover effects on cards */
+.card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Disable hover effects on images */
+img:hover {
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Disable hover effects on icons */
+svg:hover,
+i:hover {
+  transform: none !important;
+  color: inherit !important;
+  fill: inherit !important;
+}

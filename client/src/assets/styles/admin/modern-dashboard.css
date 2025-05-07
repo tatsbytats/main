@@ -1,0 +1,184 @@
+/* Modern Dashboard Styles */
+
+/* Global Styles */
+.admin-dashboard {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions for all elements */
+.admin-dashboard * {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode card styles */
+.bg-dark .card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bg-dark .card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: transform 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+/* Sidebar Styles */
+.sidebar-container {
+  transition: width 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .sidebar-container {
+    height: calc(100vh - 56px);
+    position: sticky;
+    top: 56px;
+    z-index: 1000;
+  }
+}
+
+/* Main Content Styles */
+.main-content-container {
+  min-height: calc(100vh - 56px);
+}
+
+/* Table Styles */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.table th, .table td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.bg-dark .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Badge Styles */
+.badge {
+  font-weight: 500;
+  padding: 0.35em 0.65em;
+}
+
+/* Form Control Styles */
+.form-control {
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(244, 170, 185, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.bg-dark ::-webkit-scrollbar-track {
+  background: #2c3e50;
+}
+
+.bg-dark ::-webkit-scrollbar-thumb {
+  background: #4e5d6c;
+}
+
+.bg-dark ::-webkit-scrollbar-thumb:hover {
+  background: #5d6d7e;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Utility Classes */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
+/* Glassmorphism Effects */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-effect {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}

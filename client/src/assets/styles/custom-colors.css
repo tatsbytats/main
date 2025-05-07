@@ -1,0 +1,113 @@
+/* === Color Palette Variables === */
+:root {
+    --sunrise-coral: #FF6B6B;
+    --sunrise-coral-hover: #e65a5a;
+    --sunrise-coral-active: #cc4f4f;
+
+    --petal-pink: #FADADD;
+    --blush-rose: #F4AAB9;
+    --deep-raspberry: #D16D89;
+
+    --warm-taupe: #A1887F;
+    --cream-white: #FFF8F4;
+    --soft-mint: #D6F5E3;
+    --muted-charcoal: #4E4E4E;
+    --gold-sand: #F5CBA7;
+}
+
+/* === Custom Button: Sunrise Coral === */
+.btn-sunrise-coral {
+    background-color: var(--sunrise-coral);
+    border-color: var(--sunrise-coral);
+    color: #fff;
+}
+
+.btn-sunrise-coral:hover,
+.btn-sunrise-coral:focus {
+    background-color: var(--sunrise-coral-hover);
+    border-color: var(--sunrise-coral-hover);
+    color: #fff;
+}
+
+.btn-sunrise-coral:active,
+.btn-sunrise-coral.active {
+    background-color: var(--sunrise-coral-active);
+    border-color: var(--sunrise-coral-active);
+    color: #fff;
+}
+
+.btn-sunrise-coral.disabled,
+.btn-sunrise-coral:disabled {
+    background-color: var(--sunrise-coral);
+    border-color: var(--sunrise-coral);
+    color: #fff;
+    opacity: 0.65;
+}
+
+/* === Highlight: Sunrise Coral === */
+.highlight-sunrise-coral {
+    background-color: var(--sunrise-coral);
+    color: #fff;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+}
+
+/* === Text and Background Utilities === */
+.text-muted-charcoal {
+    color: var(--muted-charcoal);
+}
+
+.bg-cream-white {
+    background-color: var(--cream-white);
+}
+
+.bg-soft-mint {
+    background-color: var(--soft-mint);
+}
+
+.text-deep-raspberry {
+    color: var(--deep-raspberry);
+}
+
+.bg-blush-rose {
+    background-color: var(--blush-rose);
+}
+
+.bg-petal-pink {
+    background-color: var(--petal-pink);
+}
+
+.text-warm-taupe {
+    color: var(--warm-taupe);
+}
+
+.bg-gold-sand {
+    background-color: var(--gold-sand);
+}
+
+/* === Accent CTA Buttons (Deep Raspberry) === */
+.btn-deep-raspberry {
+    background-color: var(--deep-raspberry);
+    border-color: var(--deep-raspberry);
+    color: #fff;
+}
+
+.btn-deep-raspberry:hover,
+.btn-deep-raspberry:focus {
+    background-color: #bb5c77;
+    border-color: #bb5c77;
+}
+
+.btn-deep-raspberry:active,
+.btn-deep-raspberry.active {
+    background-color: #a25069;
+    border-color: #a25069;
+}
+
+.btn-deep-raspberry.disabled,
+.btn-deep-raspberry:disabled {
+    background-color: var(--deep-raspberry);
+    border-color: var(--deep-raspberry);
+    color: #fff;
+    opacity: 0.65;
+}

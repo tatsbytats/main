@@ -1,0 +1,38 @@
+.scrollable-tab-pane {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  /* WebKit (Chrome, Edge, Safari) */
+  .scrollable-tab-pane::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollable-tab-pane::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollable-tab-pane::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+
+  .scrollable-tab-pane::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Enhanced scrollbar for mobile devices */
+  @media (max-width: 768px) {
+    .scrollable-tab-pane::-webkit-scrollbar {
+      width: 8px; /* Wider scrollbar for better touch interaction */
+    }
+
+    .scrollable-tab-pane::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.25); /* Darker for better visibility */
+    }
+  }

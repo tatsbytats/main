@@ -1,0 +1,20 @@
+.pets-adoption-pane {
+  background-color: #f8f9fa;
+}
+
+.pet-image-container {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pet-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover .pet-image {
+  transform: scale(1.05);
+}

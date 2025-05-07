@@ -1,0 +1,45 @@
+/* Custom Text Colors */
+
+/* Primary Text Colors */
+.text-muted-charcoal {
+    color: #4E4E4E; /* Muted Charcoal */
+}
+
+.text-deep-raspberry {
+    color: #D16D89; /* Deep Raspberry */
+}
+
+/* Accent Text Colors */
+.text-petal-pink {
+    color: #FADADD; /* Petal Pink */
+}
+
+.text-blush-rose {
+    color: #F4AAB9; /* Blush Rose */
+}
+
+.text-sunrise-coral {
+    color: #FF6B6B; /* Sunrise Coral */
+}
+
+.text-gold-sand {
+    color: #F5CBA7; /* Gold Sand */
+}
+
+/* Background Text Colors */
+.text-warm-taupe {
+    color: #A1887F; /* Warm Taupe */
+}
+
+.text-cream-white {
+    color: #FFF8F4; /* Cream White */
+}
+
+.text-soft-mint {
+    color: #D6F5E3; /* Soft Mint */
+}
+
+.sidebar-desktop {
+    background-color: #F4AAB9; /* Match navbar color */
+    color: #FFF8F4;
+  }

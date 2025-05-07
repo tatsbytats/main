@@ -1,0 +1,124 @@
+/* Modern Navbar Styling */
+.navbar-custom {
+    background-color: rgba(244, 170, 185, 0.95); /* Slightly transparent */
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(8px); /* For Safari */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    min-height: 60px; /* Slightly taller for better spacing */
+    transition: all 0.3s ease;
+}
+
+/* Brand container styling */
+.brand-container {
+    transition: transform 0.2s ease;
+}
+
+.brand-logo {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    color: #FFF8F4;
+    margin-left: 8px;
+}
+
+/* Button styling - modern and clean */
+.navbar-custom .btn {
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-width: 0.5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.navbar-custom .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .btn:active {
+    transform: translateY(0);
+}
+
+/* Icon button styling */
+.nav-icon-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation buttons */
+.nav-btn {
+    padding: 0.4rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.login-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFF8F4;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.donate-btn {
+    background-color: #FF6B6B; /* Using sunrise-coral from color palette */
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.donate-btn:hover {
+    background-color: #e65a5a; /* Using sunrise-coral-hover from color palette */
+}
+
+.donate-btn-mobile {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    background-color: #FF6B6B;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile optimizations */
+@media (max-width: 991px) {
+    .navbar-custom {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .brand-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-icon-btn {
+        width: 34px;
+        height: 34px;
+    }
+}
